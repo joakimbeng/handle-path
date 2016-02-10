@@ -1,0 +1,58 @@
+{
+  "name": "handle-path",
+  "version": "0.1.0",
+  "description": "A simple route handling tool. Mapping a URL to a handler",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joakimbeng/handle-path.git"
+  },
+  "keywords": [
+    "routing",
+    "route",
+    "url",
+    "path",
+    "match",
+    "switch",
+    "map"
+  ],
+  "author": {
+    "name": "Joakim Carlstein",
+    "email": "joakim@beng.se",
+    "url": "http://joakim.beng.se"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joakimbeng/handle-path/issues"
+  },
+  "homepage": "https://github.com/joakimbeng/handle-path#readme",
+  "xo": {
+    "envs": [
+      "node"
+    ]
+  },
+  "pj2md": {
+    "module": false,
+    "api": false,
+    "postinstall": "_usage.md",
+    "postrelated": "_postrelated.md",
+    "prelicense": "_api.md",
+    "related": [
+      "switch-path"
+    ]
+  },
+  "devDependencies": {
+    "ava": "^0.11.0",
+    "xo": "^0.12.1"
+  },
+  "dependencies": {
+    "is-plain-object": "^2.0.1",
+    "path-to-regexp": "^1.2.1"
+  }
+}

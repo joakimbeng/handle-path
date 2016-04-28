@@ -20,7 +20,7 @@ function match(path, routes, parentPattern) {
 		if (params !== null) {
 			if (typeof value === 'function') {
 				return {
-					path,
+					path: path,
 					pattern: matchPattern,
 					value: value.apply(null, params.slice(1)),
 					params: params.slice(1)
@@ -29,9 +29,9 @@ function match(path, routes, parentPattern) {
 				return match(path, value, matchPattern);
 			}
 			return {
-				path,
+				path: path,
 				pattern: matchPattern,
-				value,
+				value: value,
 				params: params.slice(1)
 			};
 		} else if (isPlainObject(value)) {

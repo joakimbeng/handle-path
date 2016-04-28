@@ -1,6 +1,6 @@
 {
   "name": "handle-path",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple route handling tool. Mapping a URL to a handler",
   "main": "src/index.js",
   "directories": {

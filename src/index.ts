@@ -12,8 +12,6 @@ export interface Match {
  params: string[] | null
 }
 
-export default (path: string, routes: Routes) => match(path, routes)
-
 let match = (path: string, routes: Routes, parentPattern: string = ''): Match => {
   const patterns = Object.keys(routes)
 
@@ -55,6 +53,8 @@ let match = (path: string, routes: Routes, parentPattern: string = ''): Match =>
     params: null
   }
 }
+
+export default match
 
 let slashify = (val: string) => {
   if (val[0] !== '/') {

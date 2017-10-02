@@ -12,7 +12,7 @@ export interface Match {
  params: string[] | null
 }
 
-let match = (path: string, routes: Routes, parentPattern: string = ''): Match => {
+let handlePath = (path: string, routes: Routes, parentPattern: string = ''): Match => {
   const patterns = Object.keys(routes)
 
   for (let pattern of patterns) {
@@ -30,7 +30,7 @@ let match = (path: string, routes: Routes, parentPattern: string = ''): Match =>
           params: params.slice(1)
         }
       } else if (isPlainObject(value)) {
-        return match(path, value, matchPattern)
+        return handlePath(path, value, matchPattern)
       }
       return {
         path: path,
@@ -39,7 +39,7 @@ let match = (path: string, routes: Routes, parentPattern: string = ''): Match =>
         params: params.slice(1)
       }
     } else if (isPlainObject(value)) {
-      const child = match(path, value, matchPattern)
+      const child = handlePath(path, value, matchPattern)
       if (child.pattern !== null) {
         return child
       }
@@ -54,7 +54,7 @@ let match = (path: string, routes: Routes, parentPattern: string = ''): Match =>
   }
 }
 
-export default match
+export default handlePath
 
 let slashify = (val: string) => {
   if (val[0] !== '/') {

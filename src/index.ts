@@ -12,7 +12,7 @@ export interface Match {
  params: string[] | null
 }
 
-let handlePath = (path: string, routes: Routes, parentPattern: string = ''): Match => {
+const handlePath = (path: string, routes: Routes, parentPattern: string = ''): Match => {
   const patterns = Object.keys(routes)
 
   for (let pattern of patterns) {
@@ -56,7 +56,7 @@ let handlePath = (path: string, routes: Routes, parentPattern: string = ''): Mat
 
 export default handlePath
 
-let slashify = (val: string) => {
+const slashify = (val: string) => {
   if (val[0] !== '/') {
     return '/' + val
   }

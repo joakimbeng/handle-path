@@ -61,7 +61,7 @@ test('returned params for match', t => {
 	const {params} = handlePath('/an/url', {
 		'/an/:item': item => item
 	});
-	t.same(params, ['url']);
+	t.deepEqual(params, ['url']);
 });
 
 test('returned result for no match', t => {
